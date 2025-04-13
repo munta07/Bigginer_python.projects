@@ -1,0 +1,10 @@
+#---------------------RANDOM PASSWORD GENERATER ------------------
+import random
+import string
+passlen=12
+ch=string.ascii_letters + string.digits +string.punctuation
+
+pas=""
+for i in range(passlen):
+    pas+=random.choice(ch)
+print(f"\nYour random password:{pas}")
