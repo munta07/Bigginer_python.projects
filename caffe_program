@@ -1,0 +1,50 @@
+#---------------------------------CAFFE PROGGRAM---------------------------------
+# Menu dictionary with item prices
+menu = {
+    "latte": 11,
+    "pasta": 30,
+    "pizza": 89,
+    "caffe": 3
+}
+
+total = 0  # Total order count
+
+# Greeting message
+print("Welcome to the Coffee Shop! ☕️🍩")
+print("Here is our menu:")
+print("☕️ Latte: 11$")
+print("🍝 Pasta: 30$")
+print("🍕 Pizza: 89$")
+print("☕️ Caffe: 3$")
+
+
+# First item order
+item_1 = input('What would you like to order? : ').lower()  # Case-insensitive input
+print(f"Your order of {item_1} has been added.")
+
+# Check if item is in menu and add to total
+if item_1 in menu:
+    total += menu[item_1]
+else:
+    print(f"Sorry, {item_1} is not available yet.")
+
+# Ordering loop
+while True:
+    another = input("Do you want to order something else (yes/no)? : ").lower()
+    
+    if another == "no":
+        break
+    elif another == "yes":
+        item = input('What would you like to order next? : ').lower()
+        
+        if item in menu:
+            total += menu[item]
+            print(f"Your order of {item} has been added.")
+        else:
+            print(f"Sorry, {item} is not available yet.")
+    else:
+        print("Please respond with 'yes' or 'no'.")
+
+# Final price
+print(f"Total price: ${total}")
+print("Thank you for visiting!")
