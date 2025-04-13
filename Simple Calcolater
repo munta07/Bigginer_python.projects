@@ -1,0 +1,28 @@
+#--------SIMPLE CALCOLATER-----------PROGGRAM...........()
+print("╔═════════════════════════════════════╗")
+print("║                                     ║")
+print("║        🧮 SIMPLE CALCULATOR 🧮       ║")
+print("║                                     ║")
+print("╚═════════════════════════════════════╝")
+print("║  Available Operators ➜    +  (add),  -  (subtract),  *  (multiply),  /  (divide)")
+op=input("║  Choose an operator ➜  + , - , * , /  : ")
+num1 = float(input("Type the first number: "))
+num2 = float(input("Type the second number: "))
+if op == "+":
+    print(f"{num1} + {num2}")
+    print(f"Result={num1 + num2} ")
+
+elif op == "-":
+    print(f"{num1} - {num2}")
+    print(f"Result={num1 - num2} ")
+
+elif op == "*":
+    print(f"{num1} * {num2}")
+    print(f"Result={num1 * num2} ")
+
+elif op == "*":
+    print(f"{num1} / {num2}")
+    print(f"Result={num1 / num2} ")
+
+else:
+    print("Error! Division by zero.")
