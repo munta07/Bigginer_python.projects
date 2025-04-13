@@ -1,0 +1,53 @@
+#----------------------------- BANKING PROGRAM ------------------------------------- 
+balance = 0 
+
+def check_balance():
+    print(f"\nCurrent Balance: ${balance}")
+def deposit():
+    global balance
+    amount = float(input("Enter deposit amount: "))
+    if amount > 0 :
+        balance += amount
+        print(f"Deposited ${amount}. New Balance: ${balance}")
+    else:
+        print("Deposit amount must be positive. ")
+def withdraw():
+    global balance
+    amount1 = float(input("Enter withdrawal amount: "))
+    if amount1 > balance :
+        print("Insufficient funds!")#you dont have money 
+    elif amount1 > 0 :
+        balance -= amount1
+        print(f"Withdraw ${amount1}. New Balancee: ${balance}")
+    else:
+        print("Withdrawal amount must br positive.")
+print("\n💸💸💸💸💸💸💸💸💸💸💸💸💸💸💸💸")
+print("💼  WELCOME TO DIGITAL BANK  💼")
+print("💸💸💸💸💸💸💸💸💸💸💸💸💸💸💸💸\n")
+
+while True :
+    print("\n╔════════════════════════════╗")
+    print("║        💰 BANK MENU        ║")
+    print("╠════════════════════════════╣")
+    print("║ 1. Check Balance           ║")
+    print("║ 2. Deposit                 ║")
+    print("║ 3. Withdraw                ║")
+    print("║ 4. Exit                    ║")
+    print("╚════════════════════════════╝")
+
+
+    choice = input("Enter your choice (1-4): ")
+
+    if choice == "1":
+        check_balance()
+    elif choice == "2" :
+        deposit()
+    elif choice == "3" :
+        withdraw()
+    elif choice == "4" :
+
+        break
+print("\n" + "="*40)
+print("💼  Thanks for using our Banking Program!")
+print("🧾  Have a great day!")
+print("="*40)
