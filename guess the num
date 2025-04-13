@@ -1,0 +1,32 @@
+# -------------------GUESS THE NUMBER----------------------GAME
+import random
+
+num1=1
+num2=10
+
+random_num=random.randint(num1,num2)
+
+times = 0
+print("╔═══════════════════════════════╗")
+print("║      GUESS THE NUMBER GAME    ║")
+print("╚═══════════════════════════════╝")
+
+while True:
+    user_input = int(input(f"🎯 Enter Your guess between ({num1} and {num2}): "))
+
+    if user_input == random_num :
+        print("╔═════════════════════════════╗")
+        print("║       🎉 YOU GOT IT! 🎉      ║")
+        print(f"║   The number was: {random_num}   ║")
+        print("╚═════════════════════════════╝")
+        break
+
+    elif user_input > random_num :
+        print("📉 Too high! Aim lower!")
+        times+=1
+
+    elif user_input < random_num :
+        print("📈 Too low! Aim higher!")
+        times+=1
+
+print(f"🎯 You nailed it in {times} tries! The number was {random_num}. 🎉")
