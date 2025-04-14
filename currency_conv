@@ -1,0 +1,41 @@
+# --------------------------------------CURRENCY CONVERSETION ------------------------------------------------
+def usd_to_tk():
+    us = float(input("Enter the amount in USD: "))
+    tk = us * 90
+    print(f"{us} USD = {tk:.2f} Taka 💵➡️💰")
+
+
+def tk_to_usd():
+    tk = float(input("Enter the amount in TAKA: "))
+    us = tk / 90
+    print(f"{tk} TAKA = {us:.2f} USD 💵➡️💰")
+def euro_to_tk():
+    euro = float(input("Enter the amount in EURO: "))
+    tk = euro * 118
+    print(f"{euro} 'EURO =' {tk:.2f} TAKA 💵➡️💰")
+
+def tk_to_euro():
+    tk = float(input("Enter the amount in TAKA: "))
+    euro = tk / 118
+    print(f"{tk} 'TAKA =' {euro:.2f} EURO 💵➡️💰")
+
+def euro_to_usd():
+    euro = float(input("Enter the amount in EURO: "))
+    us= euro * 1.08
+    print(f"{euro:.2f} EUR = {us:.2f} USD 💶➡️💵")
+
+user = input("USD to Taka 💵➡️💰 (Type 'u')\nTaka to USD 💰➡️💵 (Type 'd')\nEuro to Taka 💶➡️💰 (Type 't')\nTaka to Euro 💰➡️💶 (Type 'r')\nEuro to USD 💶➡️💵 (Type 'e')\nUSD to Euro 💵➡️💶 (Type 'e4')\nWhat currency do you want to convert? : ").lower()
+
+if user == "u":
+    print("You chose to convert USD to Taka 💵➡️💰.")
+    usd_to_tk()
+elif user == "d":
+    tk_to_usd()
+elif user == "t":
+    euro_to_tk()
+elif user == "r":
+    tk_to_euro()
+elif user == "e":
+    euro_to_usd()
+else:
+    print("Not availeval")
