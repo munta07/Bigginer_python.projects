@@ -1,0 +1,49 @@
+#----------------------------------- [    QUIZ    ] -------------------------------------------
+#                                    [____________]
+
+score = 0
+
+print("🧠 Welcome to the Quiz!\n")
+
+# Question 1
+print("1. What is the capital of Italy?")
+print("A. Paris\nB. Rome\nC. Berlin\nD. Madrid")
+answer = input("Your answer: ").upper()
+
+if answer == "B":
+    print("✅ Correct!\n")
+    score += 1
+else:
+    print("❌ Wrong! The correct answer is B. Rome\n")
+
+# Question 2
+print("2. What is 5 + 3?")
+print("A. 6\nB. 7\nC. 8\nD. 9")
+answer = input("Your answer: ").upper()
+
+if answer == "C":
+    print("✅ Correct!\n")
+    score += 1
+else:
+    print("❌ Wrong! The correct answer is C. 8\n")
+
+# Question 3
+print("3. What language do we use to write Python programs?")
+print("A. Java\nB. HTML\nC. Python\nD. C++")
+answer = input("Your answer: ").upper()
+
+if answer == "C":
+    print("✅ Correct!\n")
+    score += 1
+else:
+    print("❌ Wrong! The correct answer is C. Python\n")
+
+# Final Score
+print(f"🎯 You got {score}/3 correct!")
+
+if score == 3:
+    print("🏆 Perfect!")
+elif score == 2:
+    print("👍 Good job!")
+else:
+    print("📘 Keep practicing!")
