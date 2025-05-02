@@ -1,0 +1,20 @@
+# NAME GENARATOR ---->>>
+
+import random
+
+first_names = [
+    "Liam", "Noah", "James", "Elijah", "Lucas",
+    "Mason", "Ethan", "Logan", "Alexander", "Henry",
+    "Jacob", "Michael", "Daniel", "Jackson", "Sebastian"
+]
+
+last_names = [
+    "Smith", "Johnson", "Brown", "Williams", "Jones",
+    "Miller", "Davis", "Garcia", "Rodriguez", "Martinez",
+    "Anderson", "Taylor", "Thomas", "Hernandez", "Moore"
+]
+
+full_name = f"{random.choice(first_names)} {random.choice(last_names)}"
+print("Random Full Name:", full_name)
+
+
