@@ -1,0 +1,27 @@
+# COIN FLIP GAME --->>>
+
+import random
+
+print("🎮 COIN FLIP GAME 🎮")
+print("Guess heads or tails")
+
+while True:
+    guess = input("\nEnter your guess (heads/tails): ").lower()
+    coin = ["heads","tails"]
+    if guess != "heads" and guess != "tails":
+        print("❌ Please enter 'heads' or 'tails' ❌")
+        continue
+
+    flip = random.choice(coin)
+
+    print(f"\nCoin shows {flip}")
+
+    if guess == flip:
+        print("You won! You guesses correctly.")
+    else:
+        print("Sorry, Wrong guess. Try again!")
+
+    again = input("\n🔁 Play again? (yes/no)--> ").lower()
+    if again == "no":
+        print("👋🏾 GOODBYE!")
+        break
