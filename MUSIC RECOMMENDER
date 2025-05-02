@@ -1,0 +1,21 @@
+# MUSIC RECOMMENDER 🎶---->>>
+
+import random
+
+print(" MUSIC RECOMMENDER 🎶 ")
+
+genres = {
+    "rock": ["AC/DC","Queen","Led","Zepperlin"],
+    "pop": ["Tyler Swift","Ed Sheeran","Arina Grande"],
+    "hip-hop": ["Kendrick Lamar","Drake","J. Cole"],
+    
+}
+
+choice = input("What genre do you like? (rock/pop/hip-hop)--> ").lower()
+
+if choice not in genres:
+    print("😭 Sorry,I don't know that genre.")
+
+else:
+    artist = random.choice(genres[choice])
+    print(f"You might like: {artist} 🎧")
