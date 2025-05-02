@@ -1,0 +1,17 @@
+# REVERSE NAME --->>>
+
+print("🔀 REVERSE NAME GENERATOR ")
+
+while True :
+    name = input("\nEnter a name: ")
+
+    reversed_name = name[::-1]
+    print(f"Your reversed name is: {reversed_name}")
+    print(f"In a parallel universe, thry call you {reversed_name.title()}")
+
+    ans = input("\nTry another name? (y/n)--> ")
+    if ans != "y":
+        break
+
+
+
