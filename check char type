@@ -1,0 +1,14 @@
+# CHECK CHARACTER TYPE---->>>
+
+print("📝 CHARECTER TYPE CHECKER 📝")
+char = input("Enter a single character: ")
+
+if char.isalpha() :
+    print(f"This is a letter. ---> ({char})")
+
+elif char.isdigit():
+    print(f"This is a digit. ---> ({char})")
+
+else:
+    print(f"Invalid, Please Enter (latter, digit).--> {char}")
+
