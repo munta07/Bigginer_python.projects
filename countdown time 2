@@ -1,0 +1,21 @@
+# COUNTDOWN TIMER [2] --->>>
+
+import time 
+
+print("\n=== ⏱️ COUNTDOWN TIMER ⏱️ ===")
+print("Count down from your chosen seconds! ")
+
+while True:
+    seconds = int(input("\n🤔 Enter seconds to countdown form: "))
+
+    print(f"⌛ Starting countdown from {seconds} seconds! ⌛")
+
+    for i in range (seconds,0,-1):
+        print(f"{i} seconds remaining.... ")
+        time.sleep(1)
+    
+    print(f"\n🎉 COUNTDOWN COMPLETE! 🎉")
+
+    again = input("\n Start anothor countdown? (yes/no): ").lower()
+    if  again == "no":
+        break
