@@ -1,0 +1,33 @@
+# COLOR MIXER --->>>
+
+print("🎨 COLOR MIXER 🎨")
+
+color_mixes = {
+    ("red","blue"):"purple",
+    ("red","yellow"):"orange",
+    ("blue","yellow"):"green",
+    ("blue","green"):"teal",
+    ("white","red"):"pink",
+    ("red","green"):"brown",
+
+
+}
+
+while True:
+    col1 = input("\nEnter first color: ")
+    col2 = input("Enter second color: ")
+
+    mix = None
+
+    if (col1,col2) in color_mixes :
+        mix = color_mixes[(col1,col2)]
+
+    if mix:
+        print(f"When you mix {col1} and {col2}, you get {mix}!")
+    else:
+        print("I dont kmow what those colors make when mixed.")
+
+    x = input("\nMix more colors? (y/n): ").lower()
+    if x == "n":
+        print("GOODBYE!!")
+        break
