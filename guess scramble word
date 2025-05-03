@@ -1,0 +1,35 @@
+#GUESS THE WORD ----->>>>
+
+import random
+
+print("\n=== GUESS THE WORD! ===")
+print("Unscramble the letters to find the word!")
+
+words = ["python", "coding", "game", "computer", "zoro","gay","nigga"]
+
+while True:
+    original_word = random.choice(words)
+    letters = list(original_word)
+    random.shuffle(letters)
+    scrambled = "_".join(letters)
+
+    print(f"\nScrambled word: {scrambled}")
+
+    attempts = 3
+    while attempts > 0:
+        guess = input(f"What's the word? (Attempts left: {attempts}): ").lower()
+        if guess == original_word:
+            print("🎉 Congrats! You won!")
+            break
+        else:
+            attempts -= 1
+            if attempts > 0:
+                print("❌ Wrong! Try again.")
+
+    if guess != original_word:
+        print(f"😞 Out of tries! The word was: {original_word}")
+
+    again = input("Play again (y/n)?: ").lower()
+    if again == "n":
+        print("GOODBYE!!")
+        break
