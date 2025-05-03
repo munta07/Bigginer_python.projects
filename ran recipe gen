@@ -1,0 +1,43 @@
+# RECIPE GENERATOR 🧑🏾‍🍳 --->>>
+
+import random
+print("🧑🏾‍🍳 RANDOM RECIPE GENERATOR")
+
+"""
+protins,veggies,carb,methods->like roasted ,griled,baked
+"""
+proteins = [
+    "chicken breast", "ground beef", "salmon", "tofu",
+     "eggs", 
+]
+
+veggies = [
+    "broccoli", "carrots", "spinach", "bell peppers", "zucchini",
+    "mushrooms","green beans",
+]
+
+carbs = [
+    "rice", "quinoa", "pasta", "potatoes", "sweet potatoes",
+     "bread", "noodles",
+]
+
+methods = [
+    "grilled", "baked", "roasted", "fried", "steamed",
+    "stir-fried", "boiled", "slow-cooked", "sautéed", "air-fried"
+]
+
+flavors = [
+    "garlic","lemon","spicy","herb","sweet and sour"
+]
+
+while True:
+    protein = random.choice(proteins)
+    veggie = random.choice(veggies)
+    carb = random.choice(carbs)
+    method = random.choice(methods)
+    flavor = random.choice(flavors)
+    print(f"\nYour random recipe: {flavor} {method} {protein} with {veggie} and {carb}!")
+
+    if not input("\nGenerate anothor one? (y/n): ").lower().startswith("y"):
+        print("GOODVYE!")
+        break
