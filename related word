@@ -1,0 +1,64 @@
+# RELATED WORD GAME  --->>>
+
+import random
+import time
+
+word_pairs = {
+
+    "sky": ["blue", "fly", "cloud", "sun"],
+    "food": ["eat", "cook", "delicious", "hungry"],
+    "car": ["drive", "engine", "road", "speed"],
+    "book": ["read", "pages", "library", "author"],
+    "computer": ["code", "keyboard", "screen", "internet"],
+    "tree": ["leaf", "green", "grow", "nature"],
+    "water": ["drink", "wet", "river", "ocean"],
+    "fire": ["burn", "hot", "flame", "smoke"],
+    "music": ["listen", "song", "instrument", "dance"],
+    "school": ["learn", "teacher", "student", "class"],
+    "phone": ["call", "text", "ring", "app"],
+    "sun": ["bright", "hot", "shine", "day"],
+    "moon": ["night", "shine", "orbit", "dark"],
+    "rain": ["wet", "umbrella", "cloud", "storm"],
+    "dog": ["bark", "pet", "tail", "walk"],
+    "cat": ["meow", "fur", "nap", "purr"],
+    "house": ["home", "roof", "door", "family"],
+    "city": ["buildings", "traffic", "people", "noise"],
+    "love": ["heart", "care", "kiss", "hug"],
+    "fear": ["scared", "dark", "run", "hide"],
+}
+
+print("\n=== 🔁 WORD ASSOCIATTION GAME 🔁 ===")
+print("Respond with a related word quickly! ")
+
+score = 0
+rounds = 0 
+
+while True:
+    proomt = random.choice(list(word_pairs.keys()) )
+    related_words = word_pairs[proomt]
+
+    print(f"\nPrompt word: {proomt.upper()}")
+    print("Quick! Type a word related to this promt!")
+
+    start_time = time.time()
+    response = input("> ").lower().strip()
+    respons_time = time.time() - start_time
+
+    print("Response time", respons_time )
+    
+    # check if response is related
+    if response in related_words:
+        points = max(1, 5 - int(respons_time))
+        score += points
+        print(f"Good association! +{points} points (answered in {respons_time:.1f}s)")
+
+    else:
+        print(f"Not a common association. Related words included: {', '.join(related_words)}")
+
+    rounds += 1
+    print(f"Score: {score}/{rounds * 5} Possible points")
+
+    again = input(f"\nPlay again? (yes/no): ").lower()
+    if again == "no":
+        print(f"Final score: {score}. Thanks for playing! 👋🏾")
+        break
