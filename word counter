@@ -1,0 +1,97 @@
+# WORD COUNTER 🔤 ---->>>
+
+def count_word(text):
+    words = text.split()
+    return len(words)
+
+def count_cha(text,include_space):
+    if include_space:
+        return len(text)
+    
+    else:
+        return len(text.replace(" ",""))
+    
+def count_sent(text):
+    sent_ending = [".",",","!","?",]
+    count = 0
+
+    for char in text:
+        if char in sent_ending:
+            count += 1
+    
+    if count == 0 and text.strip():
+        count += 1
+    return count
+
+def analyze_rext(text):
+
+    word_count = count_word(text)
+    char_count_with_space = count_cha(text,True)
+    char_count_without_space = count_cha(text,False)
+    sent_count = count_sent(text)
+
+    if sent_count > 0:
+        words_per_sent = word_count / sent_count
+    else:
+        words_per_sent = 0
+
+    if word_count > 0 :
+        chars_per_word = char_count_with_space / word_count
+    else:
+        chars_per_word = 0
+
+    print("\n==== Text Analysis Results ====")
+    print(f"- 📝 Words: {word_count}")
+    print(f"- 🔤 Characters (with space): {char_count_with_space}")
+    print(f"- Characters (without spaace): {char_count_without_space}")
+    print(f"- Sentences: {sent_count}")
+    print(f"- Avaerage words per sentence: {words_per_sent:.1f}")
+    print(f"- Average characters per word: {chars_per_word:.1f}")
+
+    reading_time_min = word_count / 225
+    if reading_time_min < 1:
+        reading_time_sec = reading_time_min * 60
+        print(f"Estimated reading time {reading_time_sec:.0f} seconds ")
+
+    else:
+        print(f"Estimated reading time: {reading_time_min:.1f} minutes")
+
+
+def main():
+    print("\n=== 📝 Word Counter 📝 ===")
+    print("Count words, Characters, and sentences in your text ")
+
+    while True:
+        print("\nChoose an option: ")
+        print("1. 📝 Enter text to analyze ")
+        print("2. 🚪 Exit")
+
+        choice = input("\nYour choice (1/2)--> ")
+
+        if choice == "1":
+            print("\nEnter or paste your text below (press Enter twice to finish)--> ")
+            lines = []
+
+            while True:
+                line = input()
+                if not line and not lines[-1]:
+                    break
+                lines.append(line)
+
+            text = "\n".join(lines)
+            
+            if not text.strip():
+                print("❌ No text provided. Please try again")
+                continue
+
+            analyze_rext(text)
+
+
+        elif choice == "2":
+            print("GOODBYE 👋🏾")
+            break
+
+        else:
+            print("❌ Invalid choice. Please enter 1 or 2.")
+
+main()
