@@ -68,6 +68,9 @@ def chatbot():
             print(f"🤖 {bot_name}: {random.choice(farewells)}")
             print(f"🤖 {bot_name}: It was fun chatting with you, {user_name}")
             chatting = False
+
+        elif "nigga" in user_input:
+            print(f"🤖 {bot_name}: Shut the fuck up you are the 🐵 nigga not me lol, NIGGA {user_name}:")
         
         else:
             respomses = [
